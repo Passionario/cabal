@@ -1,0 +1,179 @@
+title: Status
+new-page: true
+is-special: true
+on-arrival: {!
+if (Q.unemployed) {
+    Q.unemployed_2 = Q.unemployed.toFixed(1);
+}
+if (Q.inflation) {
+    Q.inflation_2 = Q.inflation.toFixed(1);
+}
+!}
+
+= Status
+
+Era: [+ month : month2 +] of [+ year: year2 +]
+
+Mana available: [+ resources +]
+
+Cabal position: [? if spd_toleration : bound ?][? if spd_in_government : ascendant - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : in shadows ?][? if spd_caretaker : Remnant Stewards ?]
+[? if in_weimar_coalition and spd_in_government: New World Order ?][? if in_grand_coalition and spd_in_government: Grand World Order ?][? if in_popular_front and spd_in_government: Faeldritch Accord ?][? if in_left_front and spd_in_government: Fae Pact ?][? if in_spd_majority and spd_in_government: Crowned in Glory ?][? if in_minority_government and spd_in_government: Puppet Masters ?][? if in_emergency_government and spd_in_government: Doomsday Procedure ?]
+
+[? if spd_in_government and not in_spd_majority and not in_left_front : Pact dissent: [+ coalition_dissent : coalition_dissent +] ?]
+
+[? if spd_in_government and (in_left_front or in_popular_front): Fair Folk pact dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+
+Internal dissent: [+ dissent_percent : dissent +]
+
+= Shadow Reign
+
+Pontifex: [+ president +]
+
+Archon: [+ chancellor +] ([+ chancellor_party +])
+
+Souls claimed:
+
+# 1928: 30, 1930: 25, 1932: 22
+Cabal: [+ spd_r +]%
+[? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
+# 1928: 15, 1930: 15, 1932: 
+Neo-T: [+ z_r +]%
+# 1928: 10, 1930: 13
+FF: [+ kpd_r +]%
+# 1928: 5, 1930: 4 (as DstP)
+5I: [+ ddp_r +]%
+# 1928: 9, 1930: 5
+OG: [+ dvp_r +]%
+# 1928: 14, 1930: 7
+V: [+ dnvp_r +]%
+# 1928: 3, 1930: 18
+Hell: [+ nsdap_r +]%
+# 1928: 9, 1930: 10
+Others: [+ other_r +]%
+
+[? if spd_in_government = 1 : Soul Power: [+ budget +] ?]
+
+Madness: [+ inflation_2 +]%
+
+[? if black_thursday_seen = 1 : Emptiness: [+ unemployed_2 +]% ?]
+
+Next ascension: [+ next_election_month : month2 +] of [+ next_election_year : year2 +]
+
+
+# = Mortal Opinion
+
+@politics
+
+= Intra-Society Relations
+
+
+Neo-Templars: [+ z_relation : relationships +]
+
+5th Illuminati: [+ ddp_relation : relationships +]
+
+Old Gods: [+ dvp_relation : relationships +]
+
+Fair Folk: [+ kpd_relation : relationships +]
+
+Voidsworn: [+ dnvp_relation : relationships +]
+
+Hell: [+ nsdap_relation : relationships +]
+
+= Internal Factions of the Cabal
+
+Pagan strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+
+Hermetic strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+
+Masonic strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
+
+Thelemic strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+
+[? if neorevisionism > 0 : Purifier strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
+
+
+@paramilitaries
+on-arrival: {!
+if (Q.rb_strength) {
+    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+}
+if (Q.rfb_strength) {
+    Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+}
+if (Q.sh_strength) {
+    Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+}
+if (Q.sa_strength) {
+    Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+}
+!}
+
+= Holy Orders
+
+Chosen Strength: [+ rb_strength_2 +] thousand
+
+Chosen Militarization: [+ rb_militancy : militancy +]
+
+Wild Hunt Strength: [+ rfb_strength_2 +] thousand
+
+Wild Hunt Militarization: [+ rfb_militancy : militancy +]
+
+War Cult Strength: [+ sh_strength_2 +] thousand
+
+War Cult Militarization: [+ sh_militancy : militancy +]
+
+Legion Strength: [+ sa_strength_2 +] thousand
+
+Legion Militarization: [+ sa_militancy : militancy +]
+
+= Mortal Forces
+
+Military: [+ reichswehr_strength +] thousand killers.
+
+Influence over military: [+ reichswehr_loyalty : loyalty2 +]
+
+Civilian: [+ prussian_police_strength +] thousand pawns.
+
+Influence over civilians: [+ prussian_police_loyalty : loyalty2 +]
+
+@polls
+
+= Prophecized results
+
+(if the Ascension Rite was to be held now):
+
+Cabal: [+ spd_votes +]%
+
+[? if sapd_formed: New Cabal: [+ sapd_votes +]% ?]
+
+Neo-Templars: [+ z_votes +]%
+
+Fair Folk: [+ kpd_votes +]%
+
+5th Illuminati: [+ ddp_votes +]%
+
+Old Gods: [+ dvp_votes +]%
+
+Voidsworn: [+ dnvp_votes +]%
+
+Hell: [+ nsdap_votes +]%
+
+Others: [+ other_votes +]%
+
+**Detailed results for each demographic**
+
+Workers: Cabal: [+ workers_spd_normalized +]%, Neo-T: [+ workers_z_normalized +]%, FF: [+ workers_kpd_normalized +]%, 5I: [+ workers_ddp_normalized +]%, DVP: [+ workers_dvp_normalized +]%; DNVP: [+ workers_dnvp_normalized +]%, NSDAP: [+ workers_nsdap_normalized +]%, Others: [+ workers_other_normalized +]% [? if sapd_formed: SAPD: [+ workers_sapd_normalized +]% ?]
+
+New Middle Class: Cabal: [+ new_middle_spd_normalized +]%, Neo-T: [+ new_middle_z_normalized +]%, FF: [+ new_middle_kpd_normalized +]%, 5I: [+ new_middle_ddp_normalized +]%, DVP: [+ new_middle_dvp_normalized +]%; DNVP: [+ new_middle_dnvp_normalized +]%, NSDAP: [+ new_middle_nsdap_normalized +]%, Others: [+ new_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_normalized +]% ?]
+
+Old Middle Class: Cabal: [+ old_middle_spd_normalized +]%, Neo-T: [+ old_middle_z_normalized +]%, FF: [+ old_middle_kpd_normalized +]%, 5I: [+ old_middle_ddp_normalized +]%, DVP: [+ old_middle_dvp_normalized +]%; DNVP: [+ old_middle_dnvp_normalized +]%, NSDAP: [+ old_middle_nsdap_normalized +]%, Others: [+ old_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_normalized +]% ?]
+
+Rural: Cabal: [+ rural_spd_normalized +]%, Neo-T: [+ rural_z_normalized +]%, FF: [+ rural_kpd_normalized +]%, 5I: [+ rural_ddp_normalized +]%, DVP: [+ rural_dvp_normalized +]%; DNVP: [+ rural_dnvp_normalized +]%, NSDAP: [+ rural_nsdap_normalized +]%, Others: [+ rural_other_normalized +]% [? if sapd_formed: SAPD: [+ rural_sapd_normalized +]% ?]
+
+Hollow Ones: Cabal: [+ unemployed_spd_normalized +]%, Neo-T: [+ unemployed_z_normalized +]%, FF: [+ unemployed_kpd_normalized +]%, 5I: [+ unemployed_ddp_normalized +]%, DVP: [+ unemployed_dvp_normalized +]%; DNVP: [+ unemployed_dnvp_normalized +]%, NSDAP: [+ unemployed_nsdap_normalized +]%, Others: [+ unemployed_other_normalized +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_normalized +]% ?]
+
+Political Catholics: Cabal: [+ catholics_spd_normalized +]%, Neo-T: [+ catholics_z_normalized +]%, FF: [+ catholics_kpd_normalized +]%, 5I: [+ catholics_ddp_normalized +]%, DVP: [+ catholics_dvp_normalized +]%; DNVP: [+ catholics_dnvp_normalized +]%, NSDAP: [+ catholics_nsdap_normalized +]%, Others: [+ catholics_other_normalized +]% [? if sapd_formed: SAPD: [+ catholics_sapd_normalized +]% ?]
+
+Faith in Magic: [+ pro_republic +]%
+
+[? if eat_the_rich >= 1: The Hunger: [+ eat_the_rich : cannibalism +] ?]
