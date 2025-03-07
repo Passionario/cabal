@@ -1,0 +1,48 @@
+title: Madame Picatrix
+is-pinned-card: true
+tags: advisor, centrist
+card-image: img/portraits/WelsOtto.jpg
+view-if: wels_advisor = 1
+new-page: true
+
+= Madame Picatrix
+
+Picatrix is the long-time Hierophant of the Cabal. She is a gifted telepath and a member of the Hermetic faction.
+
+- @clear_agenda
+- @party_discipline
+- @emergency_fundraising
+- @root: Return to main
+
+@clear_agenda
+title: Mind Wipe
+subtitle: Removes all cards from the hand.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: {!
+Q.advisor_action_timer = 6;
+if (Q.difficulty >= 0) {
+    window.dendryUI.dendryEngine.state.currentHands['main'] = [];
+} else {
+    window.dendryUI.dendryEngine.state.currentHands['main.main_easy'] = [];
+}
+!}
+
+@party_discipline
+title: Mental Domination
+subtitle: Reduce dissent across the Cabal.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
+
+We have reined in turbulent minds to reduce dissent across all factions.
+
+@emergency_fundraising
+title: Reap Thoughts
+view-if: difficulty < 1 and dues > 0
+subtitle: Collect, increase or reduce the mana tithe.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6
+go-to: fundraising
+
