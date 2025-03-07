@@ -1,4 +1,4 @@
-# Social Democracy: An Alternate History
+Based on Social Democracy: An Alternate History by Autumn Chen
 
 ## Included Libraries
 
