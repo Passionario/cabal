@@ -1,4 +1,4 @@
-title: The Economic Crisis
+title: The Dying Sun
 new-page: true
 is-card: true
 view-if: crisis_urgency >= 1 and crisis_program_timer = 0 and economic_plan = 0 and black_thursday_seen == 1
@@ -7,15 +7,15 @@ on-arrival: month_actions += 1; crisis_program_timer = 5
 card-image: img/bankrun.jpg
 tags: party_affairs, govt_affairs
 
-= Addressing the Economic Crisis
+= Beneath the Dying Sun
 
 Our party is wracked as to how to deal with the economic crisis. From the centrist faction, Hilferding argues that the economic crisis must be allowed to play out, because it is simply a part of the cyclic nature of capitalism.
 
 From labor, the economist Wladimir Woytinsky argues that we must pursue a massive public works program to reduce unemployment and stimulate demand, perhaps including deficit spending. His opponents, like Hilferding, argue that this plan will cause a return to hyper-inflation, and that it would not even help the economy. In addition, according to Hilferding, Woytinsky's strategy is opposed to Marxist principles.
 
-The so-called WTB plan, after its chief supporters Woytinsky, Tarnow, and Baade, is receiving more attention within the party.
+The spectre of the so-called False Star, a once-mocking term embraced and reclaimed by its followers, looms over the Cabal and increasingly dominates discussions.
 
-However, leftists in the party argue that the WTB plan is merely a bandage over the fundamental flaws of capitalism. They argue that the crisis is an opportunity to end capitalism through massive nationalizations of industry, and finally bring our country to socialism.
+However, some of the pagan oracles denounce the False Star's supporters as false prophets. Insteaed they argue that the Sun's demise is the beginning of the long-foretold Night of Long Liberty, and that we should seize this opportunity to rewrite the fundamental principles of reality.
 
 Meanwhile, moderates and reformists draw up proposals for a limited plan of job creation through public works, funded through taxes, that does not involve deficit spending or large-scale restructuring of the economy. Labor argues that the plan is inadequate in its scale and ambition.
 
@@ -53,8 +53,8 @@ on-arrival: wtb_adopted = 1; labor_dissent -= 15; reformist_dissent -= 10; labor
 With our hard work, we have finally convinced the majority of the party to adopt the WTB plan! [? if spd_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?][? if spd_in_government = 0 : We should emphasize the plan in our electoral propaganda. ?]
 
 @support_left
-subtitle: Call for mass nationalizations and the transformation of the economy.
-unavailable-subtitle: The Left faction is not strong enough.
+subtitle: Call for liberation of the night and the transformation of reality.
+unavailable-subtitle: The pagan faction is not strong enough.
 choose-if: historical_mode == 0 or (left_strength >= labor_strength and left_strength >= center_strength and left_strength >= reformist_strength)
 on-arrival: left_strength += 10; reformist_dissent += 5; labor_dissent += 5; nationalization_support += 2
 go-to: support_left_progress if nationalization_support < 3; adopt_left if nationalization_support >= 3
@@ -68,7 +68,7 @@ We have not yet formally adopted the plan. More work needs to be done.
 @adopt_left
 on-arrival: left_strength += 15; left_dissent -= 10; reformist_dissent += 10; neorevisionist_dissent += 8; labor_dissent += 6; nationalization_adopted = 1; coup_progress += 1; economic_plan = 3; kpd_relation += 5*(1-dissent)
 
-With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! [? if spd_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?] Bourgeois opposition is likely to be fierce. [? if spd_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
+With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! [? if spd_in_government == 1 : We can set the scheme in motion as soon as possible, as long as we have the Economic or Finance ministries. ?] Bourgeois opposition is likely to be fierce. [? if spd_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
 
 @support_moderate
 subtitle: Call for a limited program of job creation without deficit spending.
