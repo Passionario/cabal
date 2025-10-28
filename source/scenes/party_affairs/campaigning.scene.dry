@@ -13,10 +13,10 @@ Whether or not we are preparing for ascension, the Cabal is always trying to tig
 
 - @workers: The needful masses ruled by Desire, our preferred prey.
 - @new_middle: The cold-eyed servitors and spiteful enforcers of Cruelty.
-- @old_middle: The Pride-wracked circles of neurotic tyrants and savants.
+- @old_middle: The Pride-wracked tyrants and those who would take their place.
 - @rural: Chaos emissaries and temporal exiles, who had felt forgotten by us in the unwritten futures.
 - @unemployed: The Hollow ones, whose hearts and minds have been consumed.
-- @catholics: New Faith zealots, who typically support the Neo-Templars.
+- @catholics: Clockwork-minded zealots of the First Machine, who typically support the Neo-Templars.
 - @root: We either don't want to or cannot control any additional souls right now.
 - @easy_discard
 
@@ -26,7 +26,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough mana.
 on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 2 if unemployed >= 15; workers_spd -= 2 if unemployed >= 25; workers_spd += 6*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
 
-We have strengthened our grip on the thralls of desire. [? if unemployed >= 15: The Hollowing Plague makes our efforts more difficult. ?][? if wtb_adopted = 1 : The patronage of the Threefold Hydra gives us greater sway over the masses. ?]
+In a universe full of scarcity and loss, desire is the universal language that we have learned to speak perfectly. [? if unemployed >= 15: The icy winds from the dying sun quench the flames of yearning and impede our efforts. ?][? if wtb_adopted = 1 : Like moths to a furnace, the needful masses are drawn to the radiance of our False Star. ?]
 
 @new_middle
 subtitle: -1 mana
@@ -34,7 +34,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough mana.
 on-arrival: new_middle_spd += 6*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
 
-We have strengthened our grip on the cruel executors. [? if socialism <= 49 and peoples_party == 0: The mental corrosion among this group makes our effort more difficult. ?] [? if peoples_party > 0: Thanks to the blessing of the Everdeep Maw, we have an easier time increasing control over the cruel than before. ?]
+In our hands, pain and death become chains to bind the cruel to our Will. [? if socialism <= 49 and peoples_party == 0: Their mental corrosion makes them inflexible and barely responsive to our commands. ?] [? if peoples_party > 0: With the Emeraldine Tablets broken, the barbed hooks of our bloodshed and butchery snare far more cruel hearts than before. ?]
 
 @old_middle
 subtitle: -1 mana
@@ -42,7 +42,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough mana.
 on-arrival: old_middle_spd += 5*(1-dissent); resources -= 1; old_middle_spd -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
 
-We have strengthened our grip on the proud tyrants. [? if nationalism >= 51 and peoples_party == 0: The undercurrent of dread among this group make our effort more difficult. ?] [? if peoples_party > 0: Thanks to the blessing of the Everdeep Maw, we have an easier time increasing control over the proud than before. ?]
+The ambitious and proud are few in number, yet each is a singular prize. [? if nationalism >= 51 and peoples_party == 0: The pervasive undercurrent of dread makes them paranoid and wary of our schemes. ?] [? if peoples_party > 0: With the Emeraldine Tablets broken, we can make Faustian bargains with them, trading power for souls. ?]
 
 @rural
 subtitle: -1 mana
@@ -50,7 +50,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough mana.
 on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2
 
-We have done what we could to strengthen our grip on the time-lost. [? if peoples_party == 0: Our histories do not entirely overlap, and they do not bow to us. ?][? if peoples_party > 0: Thanks to the blessing of the Everdeep Maw, we have an easier time increasing control over them than before. ?][? if rural_policy >= 2 : Our chronal edicts have made it easier for us to exert control over them. ?]
+We have done what we could to strengthen our grip on the time-lost. [? if peoples_party == 0: Our histories do not entirely overlap, and they do not bow to us. ?][? if peoples_party > 0: With the Emeraldine Tablets broken, we are free to engage in once-forbidden rites that grant us greater control than before. ?][? if rural_policy >= 2 : Our chronal edicts have brought them closer to our timeline. ?]
 
 @unemployed
 subtitle: -1 mana
@@ -58,7 +58,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough mana.
 on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd += 6*(1-dissent) if wtb_adopted = 1; unemployed_spd += 3*(1-dissent) if welfare >= 2;
 
-We have strengthened our grip on the hollow. [? if welfare < 0: The bleeding of leylines and resultant withering make our efforts more difficult, since we share karmic resonance with those rites, and the strings that run from our hands may end up pulling us instead. ?][? if wtb_adopted = 1 : The patronage of the Threefold Hydra gives us greater sway over the hollow. ?]
+The Hollow, bereft of urge and Will as they are, are puppets for anyone who deigns to pull their strings. [? if welfare < 0: Yet given our karmic resonance with the rites that hollowed them out in the first place, there is a risk that we may end up being the ones puppeted. Strings run both ways, after all. ?][? if wtb_adopted = 1 : The radiance of the False Star enthralls the hollow. ?]
 
 @catholics
 subtitle: -1 mana
@@ -67,4 +67,4 @@ unavailable-subtitle: Not enough mana.
 view-if: peoples_party == 1
 on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
 
-We have strengthened our grip on the New Faithful.
+The clockwork gears of the zealots may exalt the First Machine, but it is our hand that winds their keys.
