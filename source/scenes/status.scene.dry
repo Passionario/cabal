@@ -45,7 +45,7 @@ FF: [+ kpd_r +]%
 # 1928: 9, 1930: 5
 OG: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-V: [+ dnvp_r +]%
+PH: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
 Hell: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
@@ -75,7 +75,7 @@ Old Gods: [+ dvp_relation : relationships +]
 
 Fair Folk: [+ kpd_relation : relationships +]
 
-Voidsworn: [+ dnvp_relation : relationships +]
+Psi-Hive: [+ dnvp_relation : relationships +]
 
 Hell: [+ nsdap_relation : relationships +]
 
@@ -89,7 +89,7 @@ Masonic strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : d
 
 Thelemic strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
-[? if neorevisionism > 0 : Purifier strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
+[? if neorevisionism > 0 : Entropic strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
 
 
 @paramilitaries
@@ -154,25 +154,25 @@ Fair Folk: [+ kpd_votes +]%
 
 Old Gods: [+ dvp_votes +]%
 
-Voidsworn: [+ dnvp_votes +]%
+Psionic Hive: [+ dnvp_votes +]%
 
 Hell: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
-**Detailed results for each demographic**
+**Detailed results for each demongraphic**
 
-Workers: Cabal: [+ workers_spd_normalized +]%, Neo-T: [+ workers_z_normalized +]%, FF: [+ workers_kpd_normalized +]%, 5I: [+ workers_ddp_normalized +]%, DVP: [+ workers_dvp_normalized +]%; DNVP: [+ workers_dnvp_normalized +]%, NSDAP: [+ workers_nsdap_normalized +]%, Others: [+ workers_other_normalized +]% [? if sapd_formed: SAPD: [+ workers_sapd_normalized +]% ?]
+Yearning: Cabal: [+ workers_spd_normalized +]%, Neo-T: [+ workers_z_normalized +]%, FF: [+ workers_kpd_normalized +]%, 5I: [+ workers_ddp_normalized +]%, DVP: [+ workers_dvp_normalized +]%; DNVP: [+ workers_dnvp_normalized +]%, NSDAP: [+ workers_nsdap_normalized +]%, Others: [+ workers_other_normalized +]% [? if sapd_formed: SAPD: [+ workers_sapd_normalized +]% ?]
 
-New Middle Class: Cabal: [+ new_middle_spd_normalized +]%, Neo-T: [+ new_middle_z_normalized +]%, FF: [+ new_middle_kpd_normalized +]%, 5I: [+ new_middle_ddp_normalized +]%, DVP: [+ new_middle_dvp_normalized +]%; DNVP: [+ new_middle_dnvp_normalized +]%, NSDAP: [+ new_middle_nsdap_normalized +]%, Others: [+ new_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_normalized +]% ?]
+Cruel: Cabal: [+ new_middle_spd_normalized +]%, Neo-T: [+ new_middle_z_normalized +]%, FF: [+ new_middle_kpd_normalized +]%, 5I: [+ new_middle_ddp_normalized +]%, DVP: [+ new_middle_dvp_normalized +]%; DNVP: [+ new_middle_dnvp_normalized +]%, NSDAP: [+ new_middle_nsdap_normalized +]%, Others: [+ new_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_normalized +]% ?]
 
-Old Middle Class: Cabal: [+ old_middle_spd_normalized +]%, Neo-T: [+ old_middle_z_normalized +]%, FF: [+ old_middle_kpd_normalized +]%, 5I: [+ old_middle_ddp_normalized +]%, DVP: [+ old_middle_dvp_normalized +]%; DNVP: [+ old_middle_dnvp_normalized +]%, NSDAP: [+ old_middle_nsdap_normalized +]%, Others: [+ old_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_normalized +]% ?]
+Arrogant: Cabal: [+ old_middle_spd_normalized +]%, Neo-T: [+ old_middle_z_normalized +]%, FF: [+ old_middle_kpd_normalized +]%, 5I: [+ old_middle_ddp_normalized +]%, DVP: [+ old_middle_dvp_normalized +]%; DNVP: [+ old_middle_dnvp_normalized +]%, NSDAP: [+ old_middle_nsdap_normalized +]%, Others: [+ old_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_normalized +]% ?]
 
-Rural: Cabal: [+ rural_spd_normalized +]%, Neo-T: [+ rural_z_normalized +]%, FF: [+ rural_kpd_normalized +]%, 5I: [+ rural_ddp_normalized +]%, DVP: [+ rural_dvp_normalized +]%; DNVP: [+ rural_dnvp_normalized +]%, NSDAP: [+ rural_nsdap_normalized +]%, Others: [+ rural_other_normalized +]% [? if sapd_formed: SAPD: [+ rural_sapd_normalized +]% ?]
+Time-Lost: Cabal: [+ rural_spd_normalized +]%, Neo-T: [+ rural_z_normalized +]%, FF: [+ rural_kpd_normalized +]%, 5I: [+ rural_ddp_normalized +]%, DVP: [+ rural_dvp_normalized +]%; DNVP: [+ rural_dnvp_normalized +]%, NSDAP: [+ rural_nsdap_normalized +]%, Others: [+ rural_other_normalized +]% [? if sapd_formed: SAPD: [+ rural_sapd_normalized +]% ?]
 
-Hollow Ones: Cabal: [+ unemployed_spd_normalized +]%, Neo-T: [+ unemployed_z_normalized +]%, FF: [+ unemployed_kpd_normalized +]%, 5I: [+ unemployed_ddp_normalized +]%, DVP: [+ unemployed_dvp_normalized +]%; DNVP: [+ unemployed_dnvp_normalized +]%, NSDAP: [+ unemployed_nsdap_normalized +]%, Others: [+ unemployed_other_normalized +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_normalized +]% ?]
+Hollow: Cabal: [+ unemployed_spd_normalized +]%, Neo-T: [+ unemployed_z_normalized +]%, FF: [+ unemployed_kpd_normalized +]%, 5I: [+ unemployed_ddp_normalized +]%, DVP: [+ unemployed_dvp_normalized +]%; DNVP: [+ unemployed_dnvp_normalized +]%, NSDAP: [+ unemployed_nsdap_normalized +]%, Others: [+ unemployed_other_normalized +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_normalized +]% ?]
 
-Political Catholics: Cabal: [+ catholics_spd_normalized +]%, Neo-T: [+ catholics_z_normalized +]%, FF: [+ catholics_kpd_normalized +]%, 5I: [+ catholics_ddp_normalized +]%, DVP: [+ catholics_dvp_normalized +]%; DNVP: [+ catholics_dnvp_normalized +]%, NSDAP: [+ catholics_nsdap_normalized +]%, Others: [+ catholics_other_normalized +]% [? if sapd_formed: SAPD: [+ catholics_sapd_normalized +]% ?]
+Clockwork-Minded: Cabal: [+ catholics_spd_normalized +]%, Neo-T: [+ catholics_z_normalized +]%, FF: [+ catholics_kpd_normalized +]%, 5I: [+ catholics_ddp_normalized +]%, DVP: [+ catholics_dvp_normalized +]%; DNVP: [+ catholics_dnvp_normalized +]%, NSDAP: [+ catholics_nsdap_normalized +]%, Others: [+ catholics_other_normalized +]% [? if sapd_formed: SAPD: [+ catholics_sapd_normalized +]% ?]
 
 Faith in Magic: [+ pro_republic +]%
 
