@@ -1,4 +1,4 @@
-title: Fundraising
+title: Sacrifices
 new-page: true
 view-if: fundraising_timer <= 0 and (not historical_mode) and difficulty <= 3 and dues >= 1
 on-arrival: fundraising_timer = 6; month_actions += 1
@@ -6,42 +6,102 @@ frequency: 300
 is-card: true
 card-image: img/poster_2.jpg
 tags: party_affairs
+go-to: main_fund; rfb_disrupt if rfb_strength > 150 and not rfb_banned and (left_coup_progress >= 5 or kpd_relation < 20)
 
-= Fundraising
+@rfb_disrupt
 
-For better or for worse, the party cannot exist without money.
+Our divinations reveal that the Wild Hunt is on the ride, intent on disrupting our sacrificial ceremony!
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @abolish: Abolish dues.
-- @increase: Increase dues.
+- @police_protect: Propitiate the Gods-from-Salt for protection from Fae.
+- @rb_protect: Beseech the Demiurge to drive the Wild Hunt astray.
+- @together_protect: Perform the Crossroads Rite to invoke both.
+- @cancel: This is a dire omen; cancel the ceremonies!
+
+@police_protect
+view-if: spd_prussia == 1
+on-arrival: police_protect_success = prussian_police_loyalty * prussian_police_militancy * prussian_police_strength*2 - rfb_militancy*rfb_strength;
+go-to: police_protect_win if police_protect_success >= 0; police_protect_lose if police_protect_success < 0
+
+@police_protect_win
+go-to: main_fund
+
+Mirrors darken, liquids curdle, crystals shatter, and then - silence, blessed silence. We can proceed.
+
+@police_protect_lose
+on-arrival: strife += 1; workers_kpd += 8
+
+Mirrors darken, liquids curdle, crystals shatter, and then - the thunder of hooves and the mad laughter of the fae, who waste no time snatching our intended sacrifices for themselves.
+
+@together_protect
+view-if: spd_prussia == 1 and police_rb_team = 1 and rb_banned = 0
+on-arrival: together_protect_success = prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2 + rb_strength*rb_militancy - rfb_militancy*rfb_strength;
+go-to: together_protect_win if together_protect_success >= 0; together_protect_lose if together_protect_success < 0
+
+@together_protect_win
+go-to: main_fund
+
+The Crossroads open, allowing the Demiurge and the forgotten deities to intercede together. Even the Wild Hunt cannot stand against both. We can proceed with our ceremonies.
+
+@together_protect_lose
+on-arrival: strife += 1; workers_kpd += 8; 
+
+The Crossroads open, yet it is the Wild Hunt that charges through, full of madness and fury. We are forced to abandon our altars and flee.
+
+@rb_protect
+view-if: rb_banned = 0
+on-arrival: rb_success = rb_strength*rb_militancy - rfb_strength*rfb_militancy; strife += 1
+go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
+
+@rb_protect_win
+go-to: main_fund
+
+We invoke the angels and spirits still bound to the Demiurge, reciting their High Challenges and True Names. Some even deign to answer our summons, but they are enough to send the Wild Hunt in search for easier prey. We can proceed with our ceremonies.
+
+@rb_protect_lose
+on-arrival: workers_kpd += 8; rb_strength -= 50
+
+We invoke the angels and spirits still bound to the Demiurge, reciting their High Challenges and True Names. Some even deign to answer our summons, yet they are not enough to stop the Wild Hunt from plundering our sacrificial offerings.
+
+@cancel
+on-arrival: workers_kpd += 6;
+
+We lock the doors, renew protective circles, and hammer iron nails into every surface. Not today, fae. Not today.
+
+
+@main_fund
+
+= Sacrifice
+
+Power always demands sacrifices, and ours is no exception.
+
+- @maintain: Maintain our current sacrifices.
+- @reduce: Reduce the sacrifices.
+- @abolish: Stop the sacrifices and let the flames go out.
+- @increase: Increase the sacrifices.
 
 @maintain
-subtitle: [+ dues +] resources gained.
+subtitle: [+ dues +] mana gained.
 on-arrival: resources += dues;
 
-We maintain our current dues.
+The old law: if you are not the flame, you're the fuel.
 
 @reduce
 subtitle: [+ dues - 1 +] resources gained.
 view-if: dues > 1
 on-arrival: dues -= 1; resources += dues; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8
 
-Our current members appreciate this, but no one decides to join a party because of the low dues. 
+Perhaps giving up power is its own form of sacrifice. 
 
 @abolish
-subtitle: No more fundraising. People might like that.
+subtitle: This is irreversible.
 view-if: dues == 1
 on-arrival: dues = 0; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8; unemployed_spd += 12*(1-dissent)
 
-Our current members appreciate this, and many unemployed people who previously could not afford membership decide to join the party.
+Fires fade, embers cool, ashes dissolve. Only we shall remain.
 
 @increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues == 4 : Dues are already rather high; increasing them might reduce our membership. ?][? if dues == 5 : Dues are already backbreaking; increasing them will devastate our membership. ?][? if dues >= 6 : Dues are already impossible; increasing them will obliterate our membership. ?]
+subtitle: [+ dues + 1 +] mana gained. [? if unemployed >= 15 : The dying sun makes the flames twice as hungry. ?][? if dues == 4 : Our sacrifices are manifold; burning more will cost us dearly. ?][? if dues == 5 : Our sacrifices are already monstrous; burning more will harm us grieviously. ?][? if dues >= 6 : This is no longer about power; we are committing mass suicide by immolation. ?]
 on-arrival: dues += 1; resources += dues; workers_spd -= 3; unemployed_spd -= 3; workers_spd -= 10 if unemployed >= 15; unemployed_spd -= 10 if unemployed >= 15; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5; workers_spd -= 3 if dues >= 6; unemployed_spd -= 3 if dues >= 6;  rural_spd -= 3 if dues >= 6; new_middle_spd -= 3*dues if dues >= 7; old_middle_spd += 3*dues*(1-dissent) if dues >= 6;
 view-if: dues <= 13
 
-[? if dues <= 4 : Our members grumble at this, and some of the less committed members leave. ?][? if dues == 5 : Our members are angry at this, and many of them leave. ?][? if dues >= 6 : Our current members outraged by this, and scores of them leave. ?] But now, we have access to additional resources. 
-
-[? if unemployed >= 15 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?][? if dues >= 6 : Oddly enough, we get a minor influx of capitalists who view increasingly expensive participation in our party as a new investment vehicle. ?]
-
+[? if dues <= 4 : Not all who attend the ceremony get to walk away. ?][? if dues == 5 : The highest duty of every celebrant is to walk into the pyres. ?][? if dues >= 6 : *Igne natura renovatur integra*. ?] Our mana reserve grows, as does our tally of sins. [? if unemployed >= 15 : The hunger-frenzied flames erupt into an uncontrolled inferno, claiming far more than we have offered. ?]
