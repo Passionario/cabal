@@ -1,4 +1,4 @@
-title: Choosing Our Enemies
+title: Condemn Our Foes
 new-page: true
 view-if: year <= 1930 and enemies_timer <= 0
 on-arrival: month_actions += 1; enemies_timer = 18
@@ -7,11 +7,11 @@ is-card: true
 card-image: img/poster_1.png
 tags: party_affairs
 
-= Choosing our enemies
+= Condemn Our Foes
 
-In the midnight hour of hungry curses and blighted paths, who should we name as our mortal enemies?
+In the midnight hour of hungry curses and blighted paths, who should we declare as our mortal enemies?
 
-[? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
+[? if enemies != 0 : Previously, we had considered the [+ enemies +] as our ultimate nemesis. Is a change of direction necessary? ?]
 
 - @anti_dem: The inhuman forces that assault reality from all sides - the Fair Folk, the Psionic Hive and Hell.
 - @far_right: The banes of all sentient life - Hell and the Psionic Hive.
@@ -26,12 +26,12 @@ on-arrival: enemies = "inhuman forces"; center_strength += 5; reformist_strength
 Drawing the line between Human and Other is the oldest move for a reason, and one that resonates with all but the pagan cults of our Cabal, who would prefer to be fighting rival religious Societies. This might hamper our ability to make pacts with the Fae in the future.
 
 @far_right
-on-arrival: enemies = "destroyers"; left_strength += 5; left_dissent -= 5; workers_nsdap -= 3; workers_dnvp -= 3;
+on-arrival: enemies = "unmakers"; left_strength += 5; left_dissent -= 5; workers_nsdap -= 3; workers_dnvp -= 3;
 
 Saving minds and souls from the slavering maws of Those Beyond is generally popular among the entire Cabal, although the pagan consider religious zealots to be just as dangerous, while the Thelemites proclaim ominous prophecies about Fair Folk. Other Societies are also skeptical of our lack of commitment to cold iron.
 
 @nsdap
-on-arrival: enemies = "Hell"; neorevisionist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4;
+on-arrival: enemies = "demons"; neorevisionist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4;
 
 [? if nazi_urgency == 0 or nsdap_r < 10 : Hell is a far-off place right now, with more brimstone than pyre. Many in our Cabal are questioning the accuracy of our divinations. ?][? if nazi_urgency > 0 and nsdap_r >= 10 : Hell is the all-consuming doom that imperils us most. ?]
 
