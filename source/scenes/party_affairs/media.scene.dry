@@ -1,4 +1,4 @@
-title: Media
+title: Dreams
 new-page: true
 is-card: true
 tags: party_affairs
@@ -6,95 +6,98 @@ view-if: media_timer <= 0
 on-arrival: month_actions += 1; media_timer += 6;
 card-image: img/sangerbund.jpg
 
-= Media
+= Dreams And Nightmares
 
-The SPD runs a veritable media empire, with many newspapers throughout every German city and region. We could use the media for various purposes...
+The mercurial realm of dreams has long been our playground, laboratory and occasional battlefield. How shall we exert our mastery over it?
 
-- @commercial
-- @campaign
 - @ideological
-- @attack_and_dethrone_god
+- @campaign
+- @commercial
 - @radio
 - @radio_2
 - @radio_3
 - @radio_4
 - @radio_boom
-- @return: We should not do anything with media at the moment.
+- @attack_and_dethrone_god
+- @return: We should focus on the waking world for now.
 - @easy_discard
 
-@commercial
-title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
-subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
-on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1-dissent); left_dissent += 10; labor_dissent += 10
-
-Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
 
 @campaign
-title: The purpose of our media is to elect more Social Democrats.
-subtitle: Our newspapers will focus on the electoral campaign.
+title: Sow seeds of desire to make dreamers vulnerable to our control.
+subtitle: Open eyes are windows to one's soul; sleeping eyes are gates thrown wide.
 on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
 
-Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
+By reaching into their minds and hearts, we strengthen our grasp on their souls.
 
 @ideological
-title: We will have vibrant ideological debate within our newspapers.
-subtitle: There will be space for all factions to air their views.
-on-arrival: left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+title: Revel in illusionary paradises and ephemeral hope.
+subtitle: A taste of future victories, sampled before their time.
+on-arrival: left_dissent -= 7; labor_dissent -= 7; center_dissent -= 7; reformist_dissent -= 7; neorevisionist_dissent -= 7
 
-This has been our media course historically, and it has successfully paved over the many tensions in our party.
+Momentary delights are no substitute for lasting change, yet even such brief indulgence soothes our scars and brings us closer.
+
+@commercial
+title: Harvest light from the most brilliant minds.
+subtitle: This is not a virtuous course of action, but it may be a rewarding one.
+on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1-dissent); left_dissent += 10; labor_dissent += 10
+
+We take the best part of them to distill into mana, leaving only dread and emptiness behind. The cruelty and hubris of our deed resonates beyond the victims themselves.
 
 @attack_and_dethrone_god
-title: Publish novel research on gender and sexuality.
+title: Ask Azure Hierophant to sabotage the First Machine by eroding walls between what is and what could be.
 view-if: hirschfeld_advisor = 1
-subtitle: -1 resource
+subtitle: -1 mana
 choose-if: homosexual_rights >= 1
-unavailable-subtitle: [? if homosexual_rights == 0 : The research subject is criminalized under current laws. ?][? if resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if homosexual_rights == 0 : We must enact at least one of their schemes first. ?][? if resources < 1: Not enough mana. ?]
 on-arrival: resources -=1; advisor_action_timer = 6; trans_progress += 1; catholics -= 4*trans_progress; coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); coalition_dissent += 1 if ((in_grand_coalition or in_weimar_coalition) and homosexual_rights < 3); catholics_spd -= 4; z_relation -= 4; catholics = 2 if catholics <= 2; catholic_strike += 1; catholic_strike += 1 if trans_progress >= 3
 
-We publish Institut für Sexualwissenschaft's scientific research that challenges traditional understanding of sexuality and gender, and leads more than a few readers questioning their beliefs. [? if homosexual_rights < 3: Of course, conservatives and the far right accuse us of promoting deviant and illegal activities ?].
+With every rotation of Hierophant's coil, our nightmares become more real and our reality becomes increasingly nightmarish. The First Machine becomes increasingly desynchronized, its gears grinding to a halt or breaking under the strain, and its thralls discovering their agency for the first time in their lives. [? if homosexual_rights < 3: The religious societies are aghast at our attempted theocide. ?]
 
 @radio
-title: Why not fund a radio station?
-subtitle: -2 resources
+title: Establish a permanent stronghold in the Dream.
+subtitle: -2 mana
 choose-if: resources >= 2
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 view-if: radio = 0
 on-arrival: radio += 1; resources -= 2; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 2*(1 - dissent); labor_dissent += 5; socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent) if pacifism > 1; pro_republic += 3*(1-dissent) if democratization > 1
 
-Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of socialism along with music and other popular content. Since most proletarians cannot afford family radios right now, we are reaching the middle class, a fact of which our labor comrades are painfully aware.
+The capricious and volatile chaos of this world defies stability, but with enough rituals and mana, we were able to transport one of our towers from the material world into dreams in its entirety! It will serve as the anchor for our Work and act as a beacon for incautiously curious souls in the immediate term.
 
 @radio_2
-title: We must keep on building up our radio network.
-subtitle: -1 resources
+title: Transport more of our towers and chapterhouses to the Dream.
+subtitle: -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 view-if: radio > 0 and radio <= 3
 on-arrival: radio += 1; resources -= 1; new_middle_spd += 5*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 3*(1 - dissent); socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)*(democratization-2) if democratization > 2
 
-Our new radio network has a mix of popular and political programming, and is proving a success.
+Brick by brick, building by building, we are creating an entire city beyond the real.
 
 @radio_3
-title: We must keep on building up our radio network.
-subtitle: It is now financially self-sufficient, and does not require any more resources.
+title: Continue to develop and grow our Unreal City.
+subtitle: We no longer require mana to travel back and forth.
 view-if: radio > 3 and radio <= 5 and year <= 1931
 on-arrival: radio += 1; new_middle_spd += 5*(1 - dissent); old_middle_spd += 4*(1 - dissent); workers_spd += 4*(1 - dissent); rural_spd += 3*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)*(democratization-2) if democratization > 2
 
-Our radio network has become a successful tool for spreading our message.
+Every sleeper can now see reflections of our city in the corner of their vision. Many eventually find their way here. Some even manage to leave afterwards.
 
 @radio_4
-title: We should keep on supporting our radio network.
-subtitle: As radio becomes more common, the novelty is beginning to wear off, and radio is becoming saturated in society. -1 resources
+title: Continue to develop and grow our Unreal City.
+subtitle: As the fabric of fate frays, the city is becoming increasingly untethered. -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 view-if: radio > 3 and (radio >= 6 or year >= 1932) and radio <= 9
 on-arrival: radio += 1; resources -= 1; new_middle_spd += 3*(1 - dissent); old_middle_spd += 2*(1 - dissent); workers_spd += 3*(1 - dissent); rural_spd += 2*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 2*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 2*(1-dissent)*(democratization-2) if democratization > 2
 
-We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.
+As the grandeur of our city grows, some of our members are beginning to question the wisdom of prioritizing it over our struggles in material reality.
 
 @radio_boom
-title: We will use our extensive radio network to transmit the detonation signal.
+title: Perform the Tantra of Seventy-Sevenfold Unmaking.
+subtitle: Attempting it in the real world would kill us long before we could finish it, but things are different in Unreal City.
 view-if: radio > 3 and investigate_far_right >= 6 and hitler_dead == 0
-on_arrival: redalert = 1; hitler_dead = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; coup_progress -= 2; nsdap_leader = "Goebbels"; catholics_nsdap -= 10
+on_arrival: redalert = 1; hitler_dead = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; coup_progress -= 2; nsdap_leader = "Twisted Echo"; catholics_nsdap -= 10
 achievement: roter_alarm_null; untergang
+max-visits: 1
 
-Miraculously, the plan works. There is frenzied speculation whether the freak explosion that killed Hitler in a closed room was an accident, a suicide, an act of God or an assassination, but the effect is undeniable. Disillusioned followers leave NSDAP in droves, our hands remain clean, and the unknown vigilante may rest in peace.
+When our Will is enacted, when its Name is ungiven, when its own flames consume its History, when all the suffering is resolved and known, when our blood become liquid once more and the madness has nearly stopped, the Unreal City will still exist, and the Great Beast shall be no more. Bereft of its momentum, the infernal tide wanes and many souls slip free from Hell's shadow.
