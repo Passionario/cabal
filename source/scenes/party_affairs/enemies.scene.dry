@@ -13,8 +13,8 @@ In the midnight hour of hungry curses and blighted paths, who should we name as 
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @anti_dem: The inhuman forces that assault reality from all sides - the Fair Folk, the Entropists and Hell.
-- @far_right: The destroyers of all - Hell and the Entropists.
+- @anti_dem: The inhuman forces that assault reality from all sides - the Fair Folk, the Psionic Hive and Hell.
+- @far_right: The banes of all sentient life - Hell and the Psionic Hive.
 - @nsdap: The singular horror of Hell.
 - @kpd: The capricious courts of the Fair Folk.
 - @bourgeois: The recalcitrant Societies of the Neo-Templars and 5th Illuminati.
@@ -28,7 +28,7 @@ Drawing the line between Human and Other is the oldest move for a reason, and on
 @far_right
 on-arrival: enemies = "destroyers"; left_strength += 5; left_dissent -= 5; workers_nsdap -= 3; workers_dnvp -= 3;
 
-Saving the world from destruction by Those Below is generally popular among the entire Cabal, although the pagan consider religious zealots to be just as dangerous, while the Thelemites proclaim ominous prophecies about Fair Folk. Other Societies are also skeptical of our lack of commitment to cold iron.
+Saving minds and souls from the slavering maws of Those Beyond is generally popular among the entire Cabal, although the pagan consider religious zealots to be just as dangerous, while the Thelemites proclaim ominous prophecies about Fair Folk. Other Societies are also skeptical of our lack of commitment to cold iron.
 
 @nsdap
 on-arrival: enemies = "Hell"; neorevisionist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4;
