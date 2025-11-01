@@ -1,4 +1,4 @@
-title: Sacrifices
+title: Sacrifice
 new-page: true
 view-if: fundraising_timer <= 0 and (not historical_mode) and difficulty <= 3 and dues >= 1
 on-arrival: fundraising_timer = 6; month_actions += 1
