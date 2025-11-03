@@ -21,18 +21,18 @@ Every time the world is remade anew, splinters and frayed threads of the previou
 
 @land_reform
 title: As Never So Always
-subtitle: -1 power - Alter the margins of history to align the lost threads with the main weave.
+subtitle: Align the lost threads with our weave. -1 power
 unavailable-subtitle: [? if budget <= 0 : Our power reserve is drained. ?] [? if judicial_reform < 2 : The chains of causality are too strong. ?]
 choose-if: judicial_reform >= 2 and budget > 0
 on-arrival: budget -= 1; land_reform += 1; coalition_dissent += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 5; z_relation -= 4; left_strength += 8; left_dissent -= 5; rural_sol += 3; rural_policy += 1; coup_progress += 1; agriculture_goal_completed += 1;
 max-visits: 4
 
-We cannot undo what shall never be done, but we can create the missing context for it. Our edicts bring much-needed change to both sides of the divide, although that change is neither easy nor painless.
+We cannot undo what shall never be done, but we can alter the margins of history to create the missing context for it. Our edicts bring much-needed change to both sides of the divide, although that change is neither easy nor painless.
 
 
 @agricultural_finance
 title: Bleed Now's Veins Into Tomorrow
-subtitle: -1 power - Channel our world's magic to stabilize the weakest shards.
+subtitle: Stabilize the weakest shards. -1 power
 unavailable-subtitle: [? if budget <= 0 : Our power reserve is drained. ?]
 choose-if: budget >= 1
 on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1; economic_growth += 0.2;
@@ -42,7 +42,7 @@ We have established new conduits to provide the time-lost with additional cohere
 
 @pro_consumer
 title: Let Expanse Contract
-subtitle: -1 power - Summon our alternate selves from across time's rift.
+subtitle: Summon our parallel selves. -1 power
 choose-if: budget >= 1
 on-arrival: budget -= 1; welfare += 0.5; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen; economic_growth += 0.2;
 
@@ -51,7 +51,7 @@ They emerge like reflections from a crooked mirror, wearing faces so much like a
 
 @state_buyer
 title: As Never So Always
-subtitle: -2 power - Weave the Paradox Nexus, allowing the past and the future to collide in infinite majesty. [? if judicial_reform < 2 : The chains of causality are too strong. ?]
+subtitle: Let past and the future collide in infinite majesty. -2 power [? if judicial_reform < 2 : The chains of causality are too strong. ?]
 choose-if: budget >= 2 and judicial_reform >= 2
 on-arrival: budget -= 2; state_buyer = 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); dvp_relation -= 5; z_relation -= 3; peoples_party_support += 1; rural_policy += 2; capital_strike_progress += 1; economic_growth += 0.4;
 max-visits: 1
