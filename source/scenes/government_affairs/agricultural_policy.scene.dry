@@ -1,55 +1,59 @@
-title: Agricultural Policy
+title: Reach Beyond Time
 new-page: true
 is-card: true
 on-arrival: agricultural_policy_timer += 6; month_actions += 1
 view-if: spd_in_government = 1 and (agriculture_minister_party = "SPD") and agricultural_policy_timer == 0
 card-image: img/portraits/BaadeFritz.jpg
-tags: govt_affairs
+tags: govt_affairs, cabinet
+#subtitle: Issues of farmer financing, grain purchasing, and land reform.
 
-= Agricultural Policy
+= Reach Beyond Time
 
-While agricultural policy has historically not been the domain of the SPD, there is much need for policy in this area. Our urban constituencies hope for cheaper and more stable food supplies, while small farmers need economic relief. There is also the movement for land reform, to break up the large aristocratic estates and redistribute land to peasants.
+Every time the world is remade anew, splinters and frayed threads of the previous timelines are left adrift in the the void. While most of them quickly diverge beyond recognition, some may yet be within the reach of our Edicts, should we deign to issue them. Whether or not it would be wise to do so is a hotly debated matter, both with and without the Cabal. 
 
 - @land_reform
 - @agricultural_finance
 - @pro_consumer
 - @state_buyer
-- @root: Do not enact any policies for now.
+- @root: Remain silent.
 - @easy_discard
+- @cancel_advisor_action
 
 @land_reform
-title: Land Reform
-subtitle: -1 budget - Break up the large aristocratic estates and give land to landless workers.
-unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if judicial_reform < 2 : The judiciary would never allow this. ?]
+title: As Never So Always
+subtitle: -1 power - Alter the margins of history to align the lost threads with the main weave.
+unavailable-subtitle: [? if budget <= 0 : Our power reserve is drained. ?] [? if judicial_reform < 2 : The chains of causality are too strong. ?]
 choose-if: judicial_reform >= 2 and budget > 0
 on-arrival: budget -= 1; land_reform += 1; coalition_dissent += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 5; z_relation -= 4; left_strength += 8; left_dissent -= 5; rural_sol += 3; rural_policy += 1; coup_progress += 1; agriculture_goal_completed += 1;
 max-visits: 4
 
-With our policy of land reform, we are acquiring farmland from large estates, and giving the land to farmworkers' associations and small peasants. In essence, this brings class struggle to the countryside, breaking the semi-feudal property relations present in East Prussia and other areas with large estates. The bourgeois parties and large farmers despise our intrusion into the sacredness of private property, while leftists are cautiously optimistic.
+We cannot undo what shall never be done, but we can create the missing context for it. Our edicts bring much-needed change to both sides of the divide, although that change is neither easy nor painless.
 
 
 @agricultural_finance
-title: Agricultural Financing
-subtitle: -1 budget - Increase financing for agricultural credit and insurance.
+title: Bleed Now's Veins Into Tomorrow
+subtitle: -1 power - Channel our world's magic to stabilize the weakest shards.
+unavailable-subtitle: [? if budget <= 0 : Our power reserve is drained. ?]
 choose-if: budget >= 1
-on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1;
+on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1; economic_growth += 0.2;
 
-We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and center of our party are opposed to our rural policy, seeing these policies as giveaways to petit-bourgeois farmers.
+We have established new conduits to provide the time-lost with additional coherence and vitality, saving them from looming dissolution. Our Pagan and Hermetic scholars criticize this as a dereliction of our sacred duties to our own world.
 
 
 @pro_consumer
-title: Food Procurement
-subtitle: -1 budget - Provide inexpensive food for workers.
+title: Let Expanse Contract
+subtitle: -1 power - Summon our alternate selves from across time's rift.
 choose-if: budget >= 1
-on-arrival: budget -= 1; pro_consumer += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen
+on-arrival: budget -= 1; welfare += 0.5; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen; economic_growth += 0.2;
 
-We have increased state purchasing of food staples to provide to urban workers and the poor. This benefits workers more than it benefits farmers, as we are negotiating for lower purchase prices. [? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : Our coalition partners consider this policy to be a wasteful handout. ?]
+They emerge like reflections from a crooked mirror, wearing faces so much like and so much unlike our own. [? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : As our world struggles to accept their bodies, so does the stability of our shadow reign ripple under the weight of their True Names. ?]
+
 
 @state_buyer
-title: State Buyer
-subtitle: -2 budget - Create a state monopoly for grain purchases, guaranteeing prices for farmers and stable prices for consumers. [? if judicial_reform < 2 : The judiciary would never allow this. ?]
+title: As Never So Always
+subtitle: -2 power - Weave the Paradox Nexus, allowing the past and the future to collide in infinite majesty. [? if judicial_reform < 2 : The chains of causality are too strong. ?]
 choose-if: budget >= 2 and judicial_reform >= 2
-on-arrival: budget -= 2; state_buyer = 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); dvp_relation -= 5; z_relation -= 3; peoples_party_support += 1; rural_policy += 2; capital_strike_progress += 1
+on-arrival: budget -= 2; state_buyer = 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); dvp_relation -= 5; z_relation -= 3; peoples_party_support += 1; rural_policy += 2; capital_strike_progress += 1; economic_growth += 0.4;
 max-visits: 1
 
-Our new purchasing agency guarantees fair prices for farmers, while also providing lower food prices for workers and the urban poor. This policy necessitates heavy spending and an unprecedented level of state intervention in the economy, raising the ire of conservative economists.
+The Paradox Nexus permits multiple contradictory histories to overlap without cancelling each other out, but maintaining this temporal confluence is draining our power reserves at an alarming rate. 
