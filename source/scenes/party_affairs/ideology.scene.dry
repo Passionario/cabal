@@ -1,4 +1,4 @@
-title: Questions of Ideology
+title: The Wisest Fools
 new-page: true
 is-card: true
 tags: party_affairs
@@ -7,7 +7,7 @@ on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 18
 card-image: img/arbeiterbew.jpg
 max-visits: 3
 
-= Questions of Ideology
+= The Wisest Fools
 
 The SPD is torn between many different ideological currents. What should be our primary ideological guidance for now?
 
