@@ -329,7 +329,7 @@ if (typeof window !== "undefined" && window.generateBar) {
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
 
-= [+ month : month2 +] [+ year2 +]
+= [+ month : month2 +] [+ year: year2 +]
 
 @events_choice
 
