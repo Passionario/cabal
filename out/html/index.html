@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta prefix="ifiction: http://babel.ifarchive.org/protocol/iFiction/"
         property="ifiction:ifid" content="">
-    <title>Cabal: Apocalyptic History</title>
+    <title>Project Cabal: A Farewell to History</title>
     <link rel="stylesheet" type="text/css" href="game.css">
     <script src="jquery-1.11.1.min.js"></script>
     <script src="d3.v7.min.js"></script>
@@ -101,7 +101,23 @@
                         <input type="radio" id="audio_no" name="audio" value="0" onclick="window.disableAudio();">
                     </td>
                 </tr>
-
+                <tr>
+                    <td>
+                        Color scheme:
+                    </td>
+                    <td>
+                        <label for="light_mode">Light mode</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="light_mode" name="ld_mode" value="1" onclick="window.enableLightMode();">
+                    </td>
+                    <td>
+                        <label for="dark_mode">Dark mode</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="dark_mode" name="ld_mode" value="0" onclick="window.enableDarkMode();">
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>
@@ -269,8 +285,8 @@
     <div id='page'>
         <div id="mid_panel">
             <header>
-                <h1>Social Democracy: An Alternate History (CABAL MOD)</h1>
-                <h2>Original game by Autumn Chen, mod by Passionario</h2>
+                <h1>Project Cabal: A Farewell History (CABAL MOD)</h1>
+                <h2>Passionario</h2>
 
                 <div id="header-links">
                     <a id="stats-link" onclick="window.showStats();" href="#">Library</a>
@@ -282,9 +298,9 @@
                 <div id='stats_sidebar' class='tools left'>
                     <div class="tab_container">
                         <button class="tab_button active" id="main_tab" onclick="window.changeTab('status', 'main_tab');">Main</button>
-                        <button class="tab_button" id="politics_tab" onclick="window.changeTab('status.politics', 'politics_tab');">Politics</button>
-                        <button class="tab_button" id="paramilitary_tab" onclick="window.changeTab('status.paramilitaries', 'paramilitary_tab');">Defense</button>
-                        <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Polls</button>
+                        <button class="tab_button" id="politics_tab" onclick="window.changeTab('status.politics', 'politics_tab');">Promises</button>
+                        <button class="tab_button" id="paramilitary_tab" onclick="window.changeTab('status.paramilitaries', 'paramilitary_tab');">Fears</button>
+                        <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Urges</button>
                     </div>
                     <div id="qualities">
                     </div>
