@@ -1,13 +1,13 @@
-title: Reichsbanner
+title: The Demiurge
 new-page: true
 is-card: true
 tags: party_affairs
 view-if: reichsbanner_timer <= 0 and rb_banned = 0
 card-image: img/reichsbanner.jpg
 on-arrival: month_actions += 1; reichsbanner_timer += 6; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
-max-visits: 5
+max-visits: 8
 
-= Reichsbanner
+= The Demiurge
 
 The *Reichsbanner Schwarz-Rot-Gold* is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the SPD, Center, and DDP, but by far the largest component is with the SPD.
 
