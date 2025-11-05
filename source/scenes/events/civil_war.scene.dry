@@ -1,4 +1,4 @@
-title: Civil War
+title: End of the World
 audio: music/communist/A_las_barricadas.ogg
 on-arrival: {!
 Q.rb_strength = Math.round(Q.rb_strength);
