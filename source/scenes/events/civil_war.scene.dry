@@ -89,13 +89,13 @@ go-to: war_menu
 
 Despite our best efforts, our world is doomed. The Psionic Hive, with [+ sh_strength +] thousand swarm hosts, and the legions of Hell, with [+ sa_strength +] million demons, are poised to devour reality or corrupt it beyond all hope. All we can do at this point is steer its final moments towards annihilation and rebirth, so that the next world can avoid the fate that befell us.
 
-To accomplish this, we can invoke [+ rb_strength +] spirits and angels still bound to the Lost Demiurge. [? if dissent > 0.15 and dissent <= 0.25: Not all of them will answer the call, possibly due to the discordance in our hearts. ?][? if dissent > 0.25 and dissent < 0.5: Given the discordance in our hearts, many of them may refuse to heed our call. ?][? if dissent >= 0.5: Given that the Cabal is a house divided against itself, few of them will answer our call. ?]
+To accomplish this, we can attempt to invoke [+ rb_strength +] spirits and angels still bound to the Lost Demiurge. [? if dissent > 0.15 and dissent <= 0.25: Not all of them will answer the call, possibly due to the discordance in our hearts. ?][? if dissent > 0.25 and dissent < 0.5: Given the discordance in our hearts, many of them may refuse to heed our call. ?][? if dissent >= 0.5: Given that the Cabal is a house divided against itself, few of them will answer our call. ?]
 
 [? if rb_militancy < 0.25 : Unfortunately, the Demiurge is merely an echo of itself, and its servants are little more than conceptual phantoms. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have amplified the Demiurge's fading resonance, and thus its servants have regained a modicum of their former glory. ?][? if rb_militancy >= 0.5 : We have sacrificed much to sustain the legacy of the Demiurge and anoint its servants in power and glory. Let us hope it will be enough. ?]
 
 [? if chancellor_party == "FF" or president == "Winter Queen" : The Wild Hunt stands ready for its final charge, and we shall ride along them. ?]
 
-Beyond the veil, the [+ reichswehr_strength +] billion ghosts are waiting for us to join them. 
+Beyond the veil, [+ reichswehr_strength +] billion hungry ghosts are waiting for us to join them in death. 
 
 What else do we have?
 
