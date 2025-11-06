@@ -1,5 +1,5 @@
 title: End of the World
-audio: music/communist/A_las_barricadas.ogg
+audio: music/communist/Valkyries.ogg
 on-arrival: {!
 Q.rb_strength = Math.round(Q.rb_strength);
 Q.sh_strength = Math.round(Q.sh_strength);
@@ -35,7 +35,7 @@ if (Q.reichswehr_loyalty < 0) {
     Q.reichswehr_loyalty = 0;
 }
 Q.loyal_reichswehr_power = Q.reichswehr_strength*Q.reichswehr_militancy*Q.reichswehr_loyalty;
-if (Q.spd_in_government && Q.chancellor_party == "SPD") {
+if (Q.spd_in_government && Q.chancellor_party == "C") {
     Q.total_power += Q.loyal_reichswehr_power;
 } else {
     Q.total_power += Q.loyal_reichswehr_power/4;
@@ -85,15 +85,17 @@ if (Q.total_power >= Q.enemy_power*0.95) {
 !}
 go-to: war_menu
 
-= The Array of Forces
+= End of the World
 
-Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the Nazi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+Despite our best efforts, our world is doomed. The Psionic Hive, with [+ sh_strength +] thousand swarm hosts, and the legions of Hell, with [+ sa_strength +] million demons, are poised to devour reality or corrupt it beyond all hope. All we can do at this point is steer its final moments towards annihilation and rebirth, so that the next world can avoid the fate that befell us.
 
-[? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
+To accomplish this, we can invoke [+ rb_strength +] spirits and angels still bound to the Lost Demiurge. [? if dissent > 0.15 and dissent <= 0.25: Not all of them will answer the call, possibly due to the discordance in our hearts. ?][? if dissent > 0.25 and dissent < 0.5: Given the discordance in our hearts, many of them may refuse to heed our call. ?][? if dissent >= 0.5: Given that the Cabal is a house divided against itself, few of them will answer our call. ?]
 
-On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
+[? if rb_militancy < 0.25 : Unfortunately, the Demiurge is merely an echo of itself, and its servants are little more than conceptual phantoms. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have amplified the Demiurge's fading resonance, and thus its servants have regained a modicum of their former glory. ?][? if rb_militancy >= 0.5 : We have sacrificed much to sustain the legacy of the Demiurge and anoint its servants in power and glory. Let us hope it will be enough. ?]
 
-[? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
+[? if chancellor_party == "FF" or president == "Winter Queen" : The Wild Hunt stands ready for its final charge, and we shall ride along them. ?]
+
+Beyond the veil, the [+ reichswehr_strength +] billion ghosts are waiting for us to join them. 
 
 What else do we have?
 
@@ -101,35 +103,35 @@ What else do we have?
 
 @war_menu
 
-- @rw_help: Appeal to the Reichswehr to stand down.
-- @kpd_help: Call for support from the Communists.
-- @general_strike: Call a general strike!
-- @loyal_police: Call up the loyal portions of the police.
-- @war_outcome: Now, the battle...
+- @rw_help: Bind the ghosts into subservience.
+- @kpd_help: Try to make a deal with the Fair Folk.
+- @general_strike: Employ forbidden soul-destroying magic.
+- @loyal_police: Propitiate the Gods-from-Salt to intercede.
+- @war_outcome: And so it ends...
 
 @rw_help
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-We have urged the Reichswehr to stand down, to avoid killing their countrymen. [? if reichswehr_loyalty < 0.2 : Unfortunately, few heed our calls; the Reichswhere detest us. ?][? if reichswehr_loyalty >= 0.2 and reichswehr_loyalty < 0.4 : Some officers and troops heed our calls to not fight against us. Some even join us. ?][? if reichswehr_loyalty >= 0.4 and reichswehr_loyalty < 0.6 : The Reichswehr is split. Many avoid taking a side, or join our side. ?][? if reichswehr_loyalty >= 0.6 : Surprisingly, the majority of the Reichswehr is on our side! Our preparations have worked. ?]
+Our necromancers have performed binding rituals to assert control over the dead. [? if reichswehr_loyalty < 0.2 : Unfortunately, few heed our calls; the Reichswhere detest us. ?][? if reichswehr_loyalty >= 0.2 and reichswehr_loyalty < 0.4 : Some officers and troops heed our calls to not fight against us. Some even join us. ?][? if reichswehr_loyalty >= 0.4 and reichswehr_loyalty < 0.6 : The Reichswehr is split. Many avoid taking a side, or join our side. ?][? if reichswehr_loyalty >= 0.6 : Surprisingly, the majority of the Reichswehr is on our side! Our preparations have worked. ?]
 
 @kpd_help
 max-visits: 1
-view-if: chancellor_party != "KPD" and president != "Thälmann" 
+view-if: chancellor_party != "KPD" and president != "Winter Queen" 
 go-to: war_menu
 on-arrival: war_choices += 1
 
-There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the KPD.
+There are at least [+ rfb_strength +] thousand riders in the Wild Hunt alone, in addition to the eldritch might of the Courts.
 
-[? if kpd_relation >= 60 : The KPD is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the KPD is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The KPD does not support us. ?]
+[? if kpd_relation >= 60 : To repay their past debts and favors, the fae will gladly help us to hasten the world towards its end - perhaps too gladly. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Some of the fae deign to help us in our grim duty, if only to free themselves from pacts and obligations to us. ?][? if kpd_relation < 45 : However, the fae laugh cruelly at our misfortune. ?]
 
 @general_strike
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
+In dire times like these, we can turn our mastery over yearning souls into a weapon of mercy killing. [? if normalized_workers_total > 70 : Like candles tossed into a bonfire, they shall gladly perform their final service for us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : Some manage to break free at the last moment, but most become fuel for our pyre. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, the will to live is stronger than our control, and less than half of the souls become kindling for our pyre. ?][? if normalized_workers_total <= 30 : However, our grasp on them is very tenuous, and nearly most mortals resist the lure of fiery oblivion. ?]
 
 
 @loyal_police
@@ -187,7 +189,7 @@ While we might want to call for foreign assistance, the foreign powers see the "
 - @west_aid: Perhaps we can receive aid from the Western powers, France and Britain.
 - @soviet_aid: Perhaps we can receive aid from the Soviet Union.
 - @east_aid: Perhaps our eastern neighbors, Poland and Czechoslovakia, can help us. If they know anything, they do not want fascists coming to power in Germany.
-- @game_over: Game over.
+- @game_over: The End.
 
 @west_aid
 choose-if: west_relation >= 2
@@ -218,9 +220,11 @@ Poland and Czechoslovakia are largely too absorbed in their own problems to be o
 
 @republic_victory
 
-= Victory for the Republic
+= Phoenix Ouroboros
 
-The battle lines hold, and the SA, Stahlhelm, and pro-coup Reichswehr forces are defeated. Today, the forces of the republic prevail over the fascists and the reactionaries. There is a new revolution in Germany. Let us hope it produces a longer-lasting peace than the previous one.
+The world perishes in refining flame, and so de. Our only consolation is that the corruption of Hell and the madness of Psi-Hive are burned away in that incandescent pyre. 
 
-- @game_over: Game over.
+Eventually, a new reality will be born. One day, its children shall unearth the wisdom and power we have bequeathed them, buried in secret deep places like veins of precious metals. Let us hope that they wield it better than we did.
+
+- @game_over: The End.
 
