@@ -1,11 +1,25 @@
-title: Mod Info
+title: Mod FAQ
 go-to: modstuff
+
+= Frequently Asked Questions
+
+*"Reader, I have taken liberties."*
 
 @modstuff
 new-page: true
 
-= Mod Info
-
-*"Reader, I have taken liberties."*
-
+- @based: What is this mod based on?
+- @alignment: Are the Cabal the good guys or the bad guys?
 - @root: Back
+
+@based
+go-to: modstuff
+
+Nothing in particular, it's just based in general.
+
+@alignment
+go-to: modstuff
+
+You know how most games have good endings and bad endings, but some also have a secret True Ending?
+
+The Cabal is like that. They're the secret True Guys.
