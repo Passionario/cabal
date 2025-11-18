@@ -99,23 +99,23 @@ Cabal position: [? if spd_toleration : bound ?][? if spd_in_government : ascenda
 @cabinet
 go-to: menu
 
-Current Ministries:
+Throne Control:
 
-Marduk: [+ labor_minister_party +]
+Love: [+ labor_minister_party +]
 
-Azazel: [+ interior_minister_party +]
+Knowledge: [+ interior_minister_party +]
 
-Mammon: [+ finance_minister_party +]
+Dominance: [+ finance_minister_party +]
 
-Pandora: [+ economic_minister_party +]
+Life: [+ economic_minister_party +]
 
-Nemesis: [+ justice_minister_party +]
+Karma: [+ justice_minister_party +]
 
-Belial: [+ foreign_minister_party +]
+Elements: [+ foreign_minister_party +]
 
-Menhit: [+ reichswehr_minister_party +]
+Death: [+ reichswehr_minister_party +]
 
-Lilith: [+ agriculture_minister_party +]
+Time: [+ agriculture_minister_party +]
 
 
 @demographics
@@ -133,7 +133,7 @@ Most mortal souls have a dominant sin that is both the source of its strength an
 
 **Estrangement**: The yoke of survivors and outcasts of past cataclysms that devoured history. Time-lost exiles often turn to beings that predate time. 20-30% of the population.
 
-**Glory**: The fire that blinds and obliterates, burning within about 30% of the population. Its bearers disproportionately support the Neo-Templars (or the Knights Paradox in Avalon).
+**Lunacy**: The madness of the Wolf-Between and the First Machine, afflicting 30% of the population. Its victims are disproportionately enthralled by the Neo-Templars (or the Knights Paradox in Avalon).
 
 @public_opinion
 on-arrival: {!
