@@ -6,7 +6,6 @@ go-to: modstuff
 *"Reader, I have taken liberties."*
 
 @modstuff
-new-page: true
 
 - @based: What is this mod based on?
 - @alignment: Are the Cabal the good guys or the bad guys?
