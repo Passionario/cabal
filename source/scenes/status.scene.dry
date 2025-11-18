@@ -51,9 +51,9 @@ Hell: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-[? if spd_in_government = 1 : Soul Power: [+ budget +] ?]
+[? if spd_in_government = 1 : Power: [+ budget +] ?]
 
-Madness: [+ inflation_2 +]%
+Fate Drift: [+ inflation_2 +]%
 
 [? if black_thursday_seen = 1 : Emptiness: [+ unemployed_2 +]% ?]
 
@@ -71,13 +71,13 @@ Neo-Templars: [+ z_relation : relationships +]
 
 5th Illuminati: [+ ddp_relation : relationships +]
 
-Old Gods: [+ dvp_relation : relationships +]
+Unfading Cult: [+ dvp_relation : relationships +]
 
 Fair Folk: [+ kpd_relation : relationships +]
 
-Psi-Hive: [+ dnvp_relation : relationships +]
+BP Banner: [+ dnvp_relation : relationships +]
 
-Hell: [+ nsdap_relation : relationships +]
+Psi-Hive: [+ nsdap_relation : relationships +]
 
 = Internal Factions of the Cabal
 
@@ -152,11 +152,11 @@ Fair Folk: [+ kpd_votes +]%
 
 5th Illuminati: [+ ddp_votes +]%
 
-Old Gods: [+ dvp_votes +]%
+Unfading Cult: [+ dvp_votes +]%
 
-Psionic Hive: [+ dnvp_votes +]%
+Blood Prism Banner: [+ dnvp_votes +]%
 
-Hell: [+ nsdap_votes +]%
+Psionic Hive: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
@@ -172,8 +172,8 @@ Time-Lost: Cabal: [+ rural_spd_normalized +]%, Neo-T: [+ rural_z_normalized +]%,
 
 Hollow: Cabal: [+ unemployed_spd_normalized +]%, Neo-T: [+ unemployed_z_normalized +]%, FF: [+ unemployed_kpd_normalized +]%, 5I: [+ unemployed_ddp_normalized +]%, DVP: [+ unemployed_dvp_normalized +]%; DNVP: [+ unemployed_dnvp_normalized +]%, NSDAP: [+ unemployed_nsdap_normalized +]%, Others: [+ unemployed_other_normalized +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_normalized +]% ?]
 
-Clockwork-Minded: Cabal: [+ catholics_spd_normalized +]%, Neo-T: [+ catholics_z_normalized +]%, FF: [+ catholics_kpd_normalized +]%, 5I: [+ catholics_ddp_normalized +]%, DVP: [+ catholics_dvp_normalized +]%; DNVP: [+ catholics_dnvp_normalized +]%, NSDAP: [+ catholics_nsdap_normalized +]%, Others: [+ catholics_other_normalized +]% [? if sapd_formed: SAPD: [+ catholics_sapd_normalized +]% ?]
+Cogweres: Cabal: [+ catholics_spd_normalized +]%, Neo-T: [+ catholics_z_normalized +]%, FF: [+ catholics_kpd_normalized +]%, 5I: [+ catholics_ddp_normalized +]%, DVP: [+ catholics_dvp_normalized +]%; DNVP: [+ catholics_dnvp_normalized +]%, NSDAP: [+ catholics_nsdap_normalized +]%, Others: [+ catholics_other_normalized +]% [? if sapd_formed: SAPD: [+ catholics_sapd_normalized +]% ?]
 
-Faith in Magic: [+ pro_republic +]%
+Attunement: [+ pro_republic +]%
 
 [? if eat_the_rich >= 1: The Hunger: [+ eat_the_rich : cannibalism +] ?]
